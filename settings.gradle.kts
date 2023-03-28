@@ -13,4 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SportCalendar"
-include(":app")
+include(
+    ":app",
+    ":commontools",
+)
