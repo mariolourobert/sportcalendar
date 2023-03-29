@@ -16,4 +16,5 @@ rootProject.name = "SportCalendar"
 include(
     ":app",
     ":commontools",
+    ":network",
 )

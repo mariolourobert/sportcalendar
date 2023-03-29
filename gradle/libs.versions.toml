@@ -7,6 +7,9 @@ compose-activity = "1.6.1"
 core-ktx = "1.7.0"
 lifecycle-ktx = "2.3.1"
 junit = "4.13.2"
+retrofit = "2.9.0"
+koin = "3.4.0"
+okhttpinterceptor = "4.10.0"
 
 [libraries]
 # ktx
@@ -20,6 +23,11 @@ androidx-compose-uipreview = { group = "androidx.compose.ui", name = "ui-tooling
 androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 # testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+# network
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+okhttpinterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpinterceptor" }
+# DI
+koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
