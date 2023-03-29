@@ -1,6 +1,7 @@
 [versions]
 android-gradle-plugin = "7.4.2"
 kotlin = "1.8.10"
+kotlin-serialization = "1.4.1"
 compose = "2023.03.00"
 compose-compiler = "1.4.2"
 compose-activity = "1.6.1"
@@ -8,10 +9,13 @@ core-ktx = "1.7.0"
 lifecycle-ktx = "2.3.1"
 junit = "4.13.2"
 retrofit = "2.9.0"
+retrofit-kotlinx = "0.8.0"
 koin = "3.4.0"
-okhttpinterceptor = "4.10.0"
+okhttp-interceptor = "4.10.0"
 
 [libraries]
+# kotlin
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 # ktx
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 androidx-lifecycle-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-ktx" }
@@ -25,11 +29,16 @@ androidx-compose-activity = { group = "androidx.activity", name = "activity-comp
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 # network
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-okhttpinterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpinterceptor" }
+retrofit-kotlinx = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx" }
+okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp-interceptor" }
 # DI
-koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
 android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

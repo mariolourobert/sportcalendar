@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 rootProject.name = "SportCalendar"
 include(
     ":app",
+    ":calendarrepository",
     ":commontools",
     ":network",
 )

@@ -1,12 +1,13 @@
 plugins {
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 dependencies {
+    implementation(project(":commontools"))
+    implementation(project(":network"))
     implementation(libs.koin.core)
     implementation(libs.kotlin.serialization)
-    implementation(libs.okhttp.interceptor)
     implementation(libs.retrofit)
-    implementation(libs.retrofit.kotlinx)
+    testImplementation(libs.junit)
 }
