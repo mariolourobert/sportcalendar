@@ -17,5 +17,6 @@ include(
     ":app",
     ":calendarrepository",
     ":commontools",
+    ":getcalendarusecase",
     ":network",
 )

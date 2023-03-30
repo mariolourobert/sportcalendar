@@ -80,3 +80,11 @@ sealed class Either<out SuccessTemplate, out FailureTemplate> {
             }
     }
 }
+
+inline fun <SuccessTemplate, FailureTemplate, MapSuccessTemplate>
+        Either<SuccessTemplate, FailureTemplate>.mapSuccessEither(
+    map: (SuccessTemplate) -> Either<MapSuccessTemplate, FailureTemplate>
+): Either<MapSuccessTemplate, FailureTemplate> = when (this) {
+    is Either.Success -> map(value)
+    is Either.Failure -> Either.Failure(value)
+}
