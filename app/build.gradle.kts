@@ -46,9 +46,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":calendarfeature"))
+    implementation(project(":network"))
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.ktx)
+    implementation(libs.koin.android)
+
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     implementation(libs.androidx.compose.foundation)
