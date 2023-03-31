@@ -1,4 +1,4 @@
-package fr.mario.sportcalendar.ui.theme
+package fr.mario.sportcalendar.designsystem
 
 import androidx.compose.ui.graphics.Color
 

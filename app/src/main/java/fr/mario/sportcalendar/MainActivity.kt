@@ -8,7 +8,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import fr.mario.sportcalendar.calendarfeature.calendarscreen.CalendarScreen
-import fr.mario.sportcalendar.ui.theme.SportCalendarTheme
+import fr.mario.sportcalendar.designsystem.SportCalendarTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

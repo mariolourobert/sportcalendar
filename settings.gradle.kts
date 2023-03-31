@@ -18,6 +18,7 @@ include(
     ":calendarfeature",
     ":calendarrepository",
     ":commontools",
+    ":designsystem",
     ":getcalendarusecase",
     ":network",
 )

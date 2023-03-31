@@ -47,6 +47,7 @@ android {
 
 dependencies {
     implementation(project(":calendarfeature"))
+    implementation(project(":designsystem"))
     implementation(project(":network"))
 
     implementation(libs.androidx.core.ktx)
