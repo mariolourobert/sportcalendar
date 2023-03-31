@@ -22,7 +22,7 @@ androidx-lifecycle-ktx = { group = "androidx.lifecycle", name = "lifecycle-runti
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
-androidx-compose-material = { group = "androidx.compose.material", name = "material" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-uipreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 # testing
