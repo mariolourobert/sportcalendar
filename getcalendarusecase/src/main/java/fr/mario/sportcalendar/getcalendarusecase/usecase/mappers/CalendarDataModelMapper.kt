@@ -21,8 +21,8 @@ internal class CalendarDataModelMapper {
 
     private fun toEventOrNUll(dataEvent: CalendarDataModel.Event): Event? {
         val allTeams = listOf(
-            dataEvent.leftTeamResult,
-            dataEvent.rightTeamResult,
+            dataEvent.leftTeamResult.toTeam(isLeftTeam = true),
+            dataEvent.rightTeamResult.toTeam(isLeftTeam = false),
         )
 
         if (allTeams.map { it.teamScore }.any { it < 0 }) {
@@ -32,12 +32,14 @@ internal class CalendarDataModelMapper {
         val eventResult = if (
             dataEvent.leftTeamResult.teamScore == dataEvent.rightTeamResult.teamScore
         ) {
-            EventResult.Draw
+            EventResult.Draw(
+                teams = allTeams,
+            )
         } else {
 
             EventResult.ValidWin(
-                winningTeam = allTeams.maxBy { it.teamScore }.let(::toTeam),
-                losingTeam = allTeams.minBy { it.teamScore }.let(::toTeam),
+                winningTeam = allTeams.maxBy { it.teamScore },
+                losingTeam = allTeams.minBy { it.teamScore },
             )
         }
 
@@ -48,9 +50,12 @@ internal class CalendarDataModelMapper {
         )
     }
 
-    private fun toTeam(teamResult: CalendarDataModel.Event.TeamResult): Team =
+    private fun CalendarDataModel.Event.TeamResult.toTeam(
+        isLeftTeam: Boolean,
+    ): Team =
         Team(
-            teamName = teamResult.teamName,
-            teamScore = teamResult.teamScore,
+            teamName = this.teamName,
+            teamScore = this.teamScore,
+            teamSide = TeamSide.LEFT.takeIf { isLeftTeam } ?: TeamSide.RIGHT,
         )
 }

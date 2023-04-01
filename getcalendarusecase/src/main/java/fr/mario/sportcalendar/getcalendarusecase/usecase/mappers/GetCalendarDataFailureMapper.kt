@@ -6,7 +6,8 @@ import fr.mario.sportcalendar.getcalendarusecase.usecase.models.GetCalendarFailu
 class GetCalendarDataFailureMapper {
     fun toGetCalendarFailure(dataFailure: GetCalendarDataFailure): GetCalendarFailure =
         when (dataFailure) {
-            is GetCalendarDataFailure.Default ->
+            is GetCalendarDataFailure.Default,
+            is GetCalendarDataFailure.IO ->
                 GetCalendarFailure.Default(throwable = dataFailure.throwable)
             is GetCalendarDataFailure.Network ->
                 GetCalendarFailure.Network(httpsStatusCode = dataFailure.httpsStatusCode)
