@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="calendar_screen_title">Calendrier</string>
+    <string name="invalid_calendar_failure">Ce calendrier semble invalide</string>
+    <string name="network_failure">Une erreur réseau est survenue (code %s)</string>
+    <string name="unknown_failure">Une erreur inconnue est survenue</string>
+</resources>
