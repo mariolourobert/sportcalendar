@@ -8,6 +8,7 @@ dependencies {
     implementation(project(":network"))
     implementation(libs.koin.core)
     implementation(libs.kotlin.serialization)
+    implementation(libs.kotlin.coroutines.android)
     implementation(libs.retrofit)
     testImplementation(libs.junit)
 }

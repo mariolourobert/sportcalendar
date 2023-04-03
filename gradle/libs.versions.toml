@@ -2,6 +2,7 @@
 android-gradle-plugin = "7.4.2"
 kotlin = "1.8.10"
 kotlin-serialization = "1.4.1"
+kotlin-coroutines = "1.6.4"
 compose = "2023.03.00"
 compose-compiler = "1.4.2"
 compose-activity = "1.6.1"
@@ -16,6 +17,7 @@ okhttp-interceptor = "4.10.0"
 [libraries]
 # kotlin
 kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization" }
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
 # ktx
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 androidx-lifecycle-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-ktx" }

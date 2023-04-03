@@ -29,5 +29,10 @@ val calendarRepositoryModule = module {
 
     factoryOf(::CalendarApiResponseMapper)
 
-    factoryOf(::DefaultCalendarRepository) bind CalendarRepository::class
+    factory {
+        DefaultCalendarRepository(
+            calendarApi = get(),
+            calendarApiResponseMapper = get(),
+        )
+    } bind CalendarRepository::class
 }
