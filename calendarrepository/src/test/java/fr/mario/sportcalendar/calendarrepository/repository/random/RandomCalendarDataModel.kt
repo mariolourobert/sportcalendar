@@ -1,0 +1,35 @@
+package fr.mario.sportcalendar.calendarrepository.repository.random
+
+import fr.mario.sportcalendar.calendarrepository.repository.models.CalendarDataModel
+import fr.mario.sportcalendar.testtools.nextLocalDate
+import fr.mario.sportcalendar.testtools.nextLocalTime
+import fr.mario.sportcalendar.testtools.nextString
+import kotlin.random.Random
+
+internal fun Random.nextCalendarDataModel(
+    eventsCount: Int = nextInt(2, 40),
+): CalendarDataModel = CalendarDataModel(
+    List(eventsCount) {
+        nextDataEvent()
+    }
+)
+
+internal fun Random.nextDataEvent(
+    leftTeamName: String = nextString(),
+    leftTeamScore: Int = nextInt(0, 5),
+    rightTeamName: String = nextString(),
+    rightTeamScore: Int = nextInt(0, 5),
+    stringDate: String = nextLocalDate().format(apiDateFormatter),
+    stringTime: String = nextLocalTime(second = 0).format(apiTimeFormatter),
+): CalendarDataModel.Event = CalendarDataModel.Event(
+    leftTeamResult = CalendarDataModel.Event.TeamResult(
+        teamName = leftTeamName,
+        teamScore = leftTeamScore,
+    ),
+    rightTeamResult = CalendarDataModel.Event.TeamResult(
+        teamName = rightTeamName,
+        teamScore = rightTeamScore,
+    ),
+    stringDate = stringDate,
+    stringTime = stringTime,
+)

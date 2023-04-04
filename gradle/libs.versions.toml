@@ -13,6 +13,8 @@ retrofit = "2.9.0"
 retrofit-kotlinx = "0.8.0"
 koin = "3.4.0"
 okhttp-interceptor = "4.10.0"
+mockk = "1.13.4"
+desugaring = "2.0.3"
 
 [libraries]
 # kotlin
@@ -29,6 +31,8 @@ androidx-compose-uipreview = { group = "androidx.compose.ui", name = "ui-tooling
 androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 # testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
 # network
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlinx = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx" }
@@ -37,6 +41,8 @@ okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-intercept
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+# others
+desugaring = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugaring" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }

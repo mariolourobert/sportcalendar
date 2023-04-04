@@ -1,5 +1,11 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.library)
+}
+
+android {
+    namespace = "fr.mario.sportcalendar.getcalendarusecase"
+    compileSdk = 33
 }
 
 dependencies {
