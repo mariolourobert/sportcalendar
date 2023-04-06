@@ -50,7 +50,6 @@ dependencies {
     implementation(project(":designsystem"))
     implementation(project(":network"))
 
-    implementation(libs.androidx.core.ktx)
     implementation(libs.koin.android)
 
     val composeBom = platform(libs.androidx.compose.bom)
