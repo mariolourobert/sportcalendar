@@ -26,17 +26,14 @@ fun CalendarScreen() {
         title = stringResource(R.string.calendar_screen_title),
     ) {
         val viewModel: CalendarScreenViewModel = get()
-        val state = viewModel.state.collectAsState().value
 
-        Box(modifier = Modifier.padding(horizontal = mediumMarginDimen)) {
-            when (state) {
-                is CalendarScreenViewModel.State.Failure ->
-                    FailureState(state.failureUiModel)
-                CalendarScreenViewModel.State.Loading ->
-                    LoadingState()
-                is CalendarScreenViewModel.State.Success ->
-                    SuccessState(state.calendarUiModel)
-            }
+        when (val state = viewModel.state.collectAsState().value) {
+            is CalendarScreenViewModel.State.Failure ->
+                FailureState(state.failureUiModel)
+            CalendarScreenViewModel.State.Loading ->
+                LoadingState()
+            is CalendarScreenViewModel.State.Success ->
+                SuccessState(state.calendarUiModel)
         }
     }
 }
@@ -53,7 +50,7 @@ private fun FailureState(failure: CalendarScreenFailureUiModel) {
     }
 
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(all = mediumMarginDimen),
         contentAlignment = Alignment.Center,
     ) {
         Text(failureMessage)
@@ -73,7 +70,7 @@ private fun LoadingState() {
 @Composable
 private fun SuccessState(calendar: CalendarScreenUiModel) {
     LazyColumn(
-        contentPadding = PaddingValues(vertical = mediumMarginDimen),
+        contentPadding = PaddingValues(all = mediumMarginDimen),
         verticalArrangement = Arrangement.spacedBy(mediumMarginDimen),
     ) {
         items(calendar.events) { event ->
