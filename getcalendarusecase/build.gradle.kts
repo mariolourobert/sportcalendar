@@ -11,6 +11,10 @@ android {
 dependencies {
     implementation(project(":commontools"))
     implementation(project(":calendarrepository"))
+    implementation(project(":testtools"))
     implementation(libs.koin.core)
+    implementation(libs.androidx.annotation)
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.coroutines.test)
 }

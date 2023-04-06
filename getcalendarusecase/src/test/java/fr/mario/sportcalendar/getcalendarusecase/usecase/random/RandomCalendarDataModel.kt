@@ -1,4 +1,4 @@
-package fr.mario.sportcalendar.calendarrepository.repository.random
+package fr.mario.sportcalendar.getcalendarusecase.usecase.random
 
 import fr.mario.sportcalendar.calendarrepository.repository.models.CalendarDataModel
 import fr.mario.sportcalendar.testtools.nextLocalDate

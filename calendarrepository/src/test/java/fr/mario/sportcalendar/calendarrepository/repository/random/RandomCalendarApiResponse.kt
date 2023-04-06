@@ -37,5 +37,5 @@ internal fun Random.nextResponseEvent(
         stringTime = stringTime,
     )
 
-internal val apiDateFormatter = DateTimeFormatter.ofPattern("EEEE dd MMMM", Locale.FRANCE)
-internal val apiTimeFormatter = DateTimeFormatter.ofPattern("HH:mm", Locale.FRANCE)
+private val apiDateFormatter = DateTimeFormatter.ofPattern("EEEE dd MMMM", Locale.FRANCE)
+private val apiTimeFormatter = DateTimeFormatter.ofPattern("HH:mm", Locale.FRANCE)
