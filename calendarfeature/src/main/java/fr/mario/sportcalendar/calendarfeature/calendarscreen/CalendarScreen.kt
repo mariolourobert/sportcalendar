@@ -1,5 +1,6 @@
 package fr.mario.sportcalendar.calendarfeature.calendarscreen
 
+import android.text.Spanned
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,6 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import fr.mario.sportcalendar.calendarfeature.R
 import fr.mario.sportcalendar.designsystem.components.MainScaffold
@@ -34,6 +37,42 @@ fun CalendarScreen() {
                 LoadingState()
             is CalendarScreenViewModel.State.Success ->
                 SuccessState(state.calendarUiModel)
+        }
+    }
+}
+
+fun CharSequence.toAnnotatedString(): AnnotatedString = buildAnnotatedString {
+    if (this@toAnnotatedString !is Spanned) {
+        append(this.toString())
+        return@buildAnnotatedString
+    }
+
+    val spanned = this@toAnnotatedString
+    append(spanned.toString())
+    getSpans(0, spanned.length, Any::class.java).forEach { span ->
+        val start = getSpanStart(span)
+        val end = getSpanEnd(span)
+        when (span) {
+            is StyleSpan -> when (span.style) {
+                Typeface.BOLD -> addStyle(SpanStyle(fontWeight = FontWeight.Bold), start, end)
+                Typeface.ITALIC -> addStyle(SpanStyle(fontStyle = FontStyle.Italic), start, end)
+                Typeface.BOLD_ITALIC -> addStyle(
+                    SpanStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontStyle = FontStyle.Italic
+                    ), start, end
+                )
+            }
+            is UnderlineSpan -> addStyle(
+                SpanStyle(textDecoration = TextDecoration.Underline),
+                start,
+                end
+            )
+            is ForegroundColorSpan -> addStyle(
+                SpanStyle(color = Color(span.foregroundColor)),
+                start,
+                end
+            )
         }
     }
 }
